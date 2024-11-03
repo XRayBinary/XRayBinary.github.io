@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll entre secciones</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            background: white;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000; /* Asegúrate de que el menú esté por encima de otras secciones */
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 10px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .seccion {
+            height: 100vh; /* Altura de cada sección */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            border-bottom: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#seccion1">Sección 1</a></li>
+            <li><a href="#seccion2">Sección 2</a></li>
+            <li><a href="#seccion3">Sección 3</a></li>
+        </ul>
+    </nav>
+
+    <div id="seccion1" class="seccion" style="background-color: lightcoral;">Contenido de la Sección 1</div>
+    <div id="seccion2" class="seccion" style="background-color: lightblue;">Contenido de la Sección 2</div>
+    <div id="seccion3" class="seccion" style="background-color: lightgreen;">Contenido de la Sección 3</div>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+body{
+    background-color: #0d1117;
+    color: white;
+}
+
+
+#div-menu{
+    display: grid;
+    position: fixed;
+    grid-template-columns: 20% 60% 20%; 
+    text-align: center;
+    width: 100%;
+    height: 60px;
+}
+#div-language-opt{
+    margin: auto;
+}
+#div-navegator{
+    margin: auto;
+    text-decoration: none;
+}
+#div-navegator li{
+    float: left;
+    list-style: none;
+    width: 120px;
+}
+#div-navegator a{
+    text-decoration: none;
+    color: white;
+}
+
+#div-style-opt{
+    margin: auto;
+}
+
+
+
+
+
+
+#container{
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+    position: relative;
+
+}
+
+.seccion{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+}
+
+
+
+/* secciones */
+
+#div-about{
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr auto; 
+    position: relative;
+}
+
+#about-content{
+
+}
+#about-image img{
+    min-width: 600px;
+    width: 40%;
+    object-fit: contain;
+    position: absolute;
+
+    bottom: -90px;
+    right: -15px;
+    transform: rotate(29deg);
+}

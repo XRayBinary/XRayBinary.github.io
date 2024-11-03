@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    ;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+
+body {
+    background-color: #0d1117;
+    color: white;
+
+}
+
+
+#div-menu {
+    background-color: #0d1117;
+    z-index: 1;
+    display: grid;
+    position: fixed;
+    grid-template-columns: 20% 60% 20%;
+    text-align: center;
+    width: 100%;
+    height: 60px;
+}
+
+#div-language-opt {
+    margin: auto;
+}
+
+#div-navegator {
+    margin: auto;
+    text-decoration: none;
+}
+
+#div-navegator li {
+    float: left;
+    list-style: none;
+    width: 120px;
+}
+
+#div-navegator a {
+    text-decoration: none;
+    color: white;
+}
+
+#div-style-opt {
+    margin: auto;
+}
+
+
+
+
+
+#container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+    position: relative;
+
+}
+
+#container::-webkit-scrollbar {
+    display: none;
+}
+
+
+.seccion {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+}
+
+
+
+
+
+/* secciones */
+
+#div-about {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    position: relative;   
+}
+
+#about-content {
+    margin-left: 50px;
+
+}
+
+#p-name{
+    font-size: 4vh;
+    padding-left: 12px;
+    margin-bottom: 20px;
+}
+#p-job{
+    font-size: 20vh;
+    line-height: 80%;
+}
+#p-info{
+    width: 700px;
+    font-size: 2.7vh;
+    padding-left: 12px;
+    padding-top: 50px;
+}
+#p-button{
+    width: 700px;
+    font-size: 20px;
+    padding-left: 12px;
+    padding-top: 40px;
+    text-align: center;
+}
+
+#p-button button{
+    background-color: #5ce1e6;
+    height: 45px;
+    width: 220px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#about-image{
+    display: grid;
+    background-color: #0d1117;
+}
+
+#about-image img {
+    width: 40%;
+    object-fit: contain;
+    position: absolute;
+
+    bottom: -90px;
+    right: -15px;
+    transform: rotate(29deg);
+}
